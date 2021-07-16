@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -5,6 +6,7 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
 html {
   line-height: 1.15;
   /* 1 */
@@ -335,4 +337,153 @@ template {
  */
 [hidden] {
   display: none;
+}
+
+body {
+  background-color: #FFFFFF;
+  font-family: "Lato", sans-serif;
+}
+
+.body {
+  align-items: center;
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.5fr 0.3fr repeat(3, 0.1fr);
+  justify-content: center;
+}
+
+*:focus {
+  outline: none;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+.research {
+  display: flex;
+  justify-content: space-around;
+}
+
+.research__bar {
+  display: flex;
+  height: 70px;
+  width: 100%;
+}
+
+.research__bar__input {
+  border-radius: 5px 0px 0px 5px;
+  border: none;
+  color: white;
+  margin: 0;
+  background-color: #E7E7E7;
+  color: black;
+}
+
+.research__bar__input::focus  {
+  outline: none;
+}
+
+.research__bar__input::placeholder {
+  color: #C7BEBE;
+}
+
+.research__bar__submit {
+  border: none;
+  margin: 0;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  color: white;
+  background-color: #E7E7E7;
+  border-radius: 0 5px 5px 0;
+  color: black;
+}
+
+.research__fields__form {
+  display: flex;
+  height: 70px;
+  width: 100%;
+}
+
+.ingredient__button {
+  border: none;
+  margin: 0;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  color: white;
+  background-color: #3282F7;
+  border-radius: 0 5px 5px 0;
+}
+
+.ingredient__input {
+  border-radius: 5px 0px 0px 5px;
+  border: none;
+  color: white;
+  margin: 0;
+  background-color: #3282F7;
+  border-radius: 5px 0 0 5px;
+}
+
+.ingredient__input::focus  {
+  outline: none;
+}
+
+.ingredient__input::placeholder {
+  color: white;
+}
+
+.apparatus__button {
+  border: none;
+  margin: 0;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  color: white;
+  background-color: #68D9A4;
+  border-radius: 0 5px 5px 0;
+}
+
+.apparatus__input {
+  border-radius: 5px 0px 0px 5px;
+  border: none;
+  color: white;
+  margin: 0;
+  background-color: #68D9A4;
+  border-radius: 5px 0 0 5px;
+}
+
+.apparatus__input::focus  {
+  outline: none;
+}
+
+.apparatus__input::placeholder {
+  color: white;
+}
+
+.ustensils__button {
+  border: none;
+  margin: 0;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  color: white;
+  background-color: #ED6454;
+  border-radius: 0 5px 5px 0;
+}
+
+.ustensils__input {
+  border-radius: 5px 0px 0px 5px;
+  border: none;
+  color: white;
+  margin: 0;
+  background-color: #ED6454;
+  border-radius: 5px 0 0 5px;
+}
+
+.ustensils__input::focus  {
+  outline: none;
+}
+
+.ustensils__input::placeholder {
+  color: white;
 }
