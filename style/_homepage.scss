@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
+
+body {
+	background-color: $backgroundColor;
+	font-family: "Lato", sans-serif;
+}
+
+.body {
+	@include makeAGrid(1fr, 0.5fr 0.3fr repeat(3, 0.1fr), 0.5rem);
+}
+
+*:focus {
+ outline: none; //?undisplay borders for inputs
+}
+
+.header {
+	display: flex;
+	justify-content: center;
+}
+
+.research {
+	display: flex;
+	justify-content: space-around;
+	&__bar {
+		@include form();
+		&__input {
+			@include input(researchBar);
+		}
+		&__submit {
+			@include button(research);
+		}
+	}
+
+ &__fields__form {
+  @include form()
+ }
+}
+
+.ingredient {
+	&__button {
+  @include button(ingredient);
+	}
+	&__input {
+  @include input(ingredient);
+	}
+}
+
+.apparatus {
+	&__button {
+  @include button(apparatus);
+	}
+	&__input {
+  @include input(apparatus);
+	}
+}
+
+.ustensils {
+	&__button {
+  @include button(ustensils);
+	}
+	&__input {
+  @include input(ustensils);
+	}
+}
+
+.results {
+}
