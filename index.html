@@ -1,15 +1,67 @@
 <!DOCTYPE html>
 <html>
- <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Les petits plats</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/style.css">
- </head>
- <body>
-  <h1>Hello world</h1>
-  <script src="" async defer></script>
- </body>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>Les petits plats</title>
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link
+			rel="stylesheet"
+			crossorigin="anonymous"
+			href="https://pro.fontawesome.com/releases/v5.12.1/css/all.css"
+			integrity="sha384-TxKWSXbsweFt0o2WqfkfJRRNVaPdzXJ/YLqgStggBVRREXkwU7OKz+xXtqOU4u8+"
+		/>
+	</head>
+	<body class="body">
+		<header class="header">
+			<object class="header__logo" data="./assets/logo.svg"></object>
+		</header>
+		<section>
+			<form class="research__bar">
+				<input class="research__bar__input" placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette" type="text" />
+				<button class="research__bar__submit" type="submit">
+					<i class="far fa-search"></i>
+				</button>
+			</form>
+		</section>
+		<section class="research__fields">
+			<form class="research__fields__form">
+				<input class="research__fields__form__input ingredient__input" placeholder="Ingrédient" type="text" />
+				<button class="research__fields__form__submit ingredient__button" type="submit">
+					<i class="far fa-chevron-down"></i>
+				</button>
+			</form>
+			<aside class="research__fields__form__results">
+				<ul>
+					<li>TEST</li>
+				</ul>
+			</aside>
+			<form class="research__fields__form">
+				<input class="research__fields__form__input apparatus__input" placeholder="Appareil" type="text" />
+				<button class="research__fields__form__submit apparatus__button" type="submit">
+					<i class="far fa-chevron-down"></i>
+				</button>
+			</form>
+			<aside>
+				<ul>
+					<li>TEST</li>
+				</ul>
+			</aside>
+			<form class="research__fields__form">
+				<input class="research__fields__form__input ustensils__input" placeholder="Ustensiles" type="text" />
+				<button class="research__fields__form__submit ustensils__button" type="submit">
+					<i class="far fa-chevron-down"></i>
+				</button>
+			</form>
+			<aside>
+				<ul>
+					<li>TEST</li>
+				</ul>
+			</aside>
+		</section>
+		<main class="results"></main>
+		<script src="" async defer></script>
+	</body>
 </html>
