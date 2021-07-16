@@ -3,14 +3,15 @@
 body {
 	background-color: $backgroundColor;
 	font-family: "Lato", sans-serif;
+	margin: 0 1rem;
 }
 
 .body {
-	@include makeAGrid(1fr, 0.5fr 0.3fr repeat(3, 0.1fr), 0.5rem);
+	@include makeAGrid(100%, 0.5fr 0.3fr repeat(3, 0.1fr), 0.5rem);
 }
 
 *:focus {
- outline: none; //?undisplay borders for inputs
+	outline: none; //?undisplay borders for inputs
 }
 
 .header {
@@ -31,37 +32,76 @@ body {
 		}
 	}
 
- &__fields__form {
-  @include form()
- }
+	&__fields__form {
+		@include form();
+	}
 }
 
 .ingredient {
 	&__button {
-  @include button(ingredient);
+		@include button(ingredient);
 	}
 	&__input {
-  @include input(ingredient);
+		@include input(ingredient);
 	}
 }
 
 .apparatus {
 	&__button {
-  @include button(apparatus);
+		@include button(apparatus);
 	}
 	&__input {
-  @include input(apparatus);
+		@include input(apparatus);
 	}
 }
 
 .ustensils {
 	&__button {
-  @include button(ustensils);
+		@include button(ustensils);
 	}
 	&__input {
-  @include input(ustensils);
+		@include input(ustensils);
 	}
 }
 
 .results {
+}
+
+@media screen and (min-width: $largedevices) {
+	body {
+		margin: auto;
+		max-width: 1080px;
+	}
+
+	.body {
+		@include makeAGrid(1fr, 2fr 0.3fr 1fr, 0.5rem);
+	}
+
+	.header {
+		grid-column: 1;
+		grid-row: 1;
+	}
+
+	.research {
+		grid-column: 1;
+		grid-row: 2;
+	}
+
+	.research__fields {
+  @include makeAGrid(repeat(6, 1fr), 1fr, 0.5rem);
+		.ingredient {
+			grid-column: 1;
+			grid-row: 1;
+		}
+
+		.apparatus {
+			grid-column: 2;
+			grid-row: 1;
+		}
+
+		.ustensils {
+			grid-column: 3;
+			grid-row: 1;
+		}
+	}
 }
