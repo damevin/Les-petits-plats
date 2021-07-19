@@ -10,16 +10,44 @@ class RecipeCard {
 		this._appliance = data.appliance;
 	}
 
- get formatIngredients() {
-  this._ingredients.forEach(ingredient => {
-   console.log(ingredient.name)
-  });
- }
+	get formatIngredients() {
+		this._ingredients.forEach((ingredient) => {
+			console.log(ingredient.name);
+		});
+	}
 
-
+	/**
+	 * Create recipe card with create dom function
+	 * @returns HTMLElement - Recipe card
+	 */
 	get recipeCard() {
-  const element = createDom('h1', 'tes')
-  return element
+		const card = createDom(
+			"article",
+			{ class: "recipe__card" },
+			createDom(
+				"section",
+				{ class: "recipe__card__section" },
+				createDom(
+					"header",
+					`${this._name}`,
+					{ class: "recipe__card__header" },
+					createDom(
+						"aside",
+						createDom(
+							"ul",
+               // ... pour transformer les éléments du tableau en paramètres pour createDom
+              //     .map() pour renvoyer un tableau car .forEach() renvoie undefined
+							...this._ingredients.map((ingredient) => {
+                // return pour renvoyer une valeur sinon .map() renvoie un tableau de undefined
+								return createDom("li", `${ingredient.ingredient} ${ingredient.quantity}`);
+							})
+						), createDom('p', `${this._description}`)
+					)
+				)
+			)
+		);
+
+		return card;
 		/* return `
   <article>
    <img>
@@ -32,6 +60,8 @@ class RecipeCard {
      </aside>
    </section>
   </article>
+
+  createDom('li', `${this._ingredients.map(ingredient => `${ingredient.ingredient} ${ingredient.quantity}`)}`))
   
   `; */
 	}
