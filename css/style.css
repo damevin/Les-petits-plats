@@ -362,7 +362,7 @@ body {
   display: grid;
   gap: 0.5rem;
   grid-template-columns: 100%;
-  grid-template-rows: 0.5fr 0.3fr repeat(3, 0.1fr);
+  grid-template-rows: 1fr;
   justify-content: center;
 }
 
@@ -373,6 +373,7 @@ body {
 .header {
   display: flex;
   justify-content: center;
+  margin: 1rem;
 }
 
 .research {
@@ -414,6 +415,11 @@ body {
   background-color: #E7E7E7;
   border-radius: 0 5px 5px 0;
   color: black;
+}
+
+.research__fields {
+  display: grid;
+  gap: .3rem;
 }
 
 .research__fields__form {
@@ -513,9 +519,21 @@ body {
   align-items: center;
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   justify-content: center;
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .results {
+    align-items: center;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    justify-content: center;
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -569,11 +587,6 @@ body {
   }
 }
 
-.recipe__card {
-  position: initial;
-  height: 400px;
-}
-
 .recipe__card__placeholder {
   background-color: #C7BEBE;
   border-radius: 5px 5px 0 0;
@@ -581,7 +594,7 @@ body {
 }
 
 .recipe__card__section {
-  padding: 0.5rem 1rem 5rem 1rem;
+  padding: 0.5rem 1rem 2rem 1rem;
   background-color: #E7E7E7;
   border-radius: 0 0 5px 5px;
 }
@@ -589,7 +602,8 @@ body {
 .recipe__card__header {
   display: flex;
   justify-content: space-between;
-  font-size: 12px;
+  font-size: 10px;
+  margin: 0;
 }
 
 .recipe__card__header__time {
@@ -604,21 +618,22 @@ body {
   grid-template-rows: 1fr;
   justify-content: center;
   height: 110px;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .recipe__card__list {
   align-self: start;
+  font-size: 12px;
   justify-self: start;
-  font-size: 14px;
 }
 
 .recipe__card__description {
   align-self: start;
+  height: 118px;
   justify-self: start;
   margin: 0;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: normal;
-  height: inherit;
+  white-space: wrap;
+  width: 100%;
 }
