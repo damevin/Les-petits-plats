@@ -20,7 +20,11 @@
 		</header>
 		<section class="research">
 			<form class="research__bar">
-				<input class="research__bar__input" placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette" type="text" />
+				<input
+					class="research__bar__input"
+					placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette"
+					type="text"
+				/>
 				<button class="research__bar__submit" type="submit">
 					<i class="far fa-search"></i>
 				</button>
@@ -28,39 +32,48 @@
 		</section>
 		<section class="research__fields">
 			<form class="research__fields__form ingredient">
-				<input class="research__fields__form__input ingredient__input" placeholder="Ingrédient" type="text" />
-				<button class="research__fields__form__submit ingredient__button" type="submit">
-					<i class="far fa-chevron-down"></i>
+				<input
+					class="research__fields__form__input ingredient__input"
+					placeholder="Ingrédient"
+					type="text"
+				/>
+				<button class="research__fields__form__submit ingredient__button" type="button">
+					<i class="far fa-chevron-down ingredient__chevron"></i>
 				</button>
 			</form>
 			<aside class="research__fields__form__results">
-				<ul>
-				</ul>
+				<ul class="ingredient__results"></ul>
 			</aside>
 			<form class="research__fields__form apparatus">
-				<input class="research__fields__form__input apparatus__input" placeholder="Appareil" type="text" />
-				<button class="research__fields__form__submit apparatus__button" type="submit">
-					<i class="far fa-chevron-down"></i>
+				<input
+					class="research__fields__form__input apparatus__input"
+					placeholder="Appareil"
+					type="text"
+				/>
+				<button class="research__fields__form__submit apparatus__button" type="button">
+					<i class="far fa-chevron-down apparatus__chevron"></i>
 				</button>
 			</form>
 			<aside class="research__fields__form__results">
-				<ul>
-				</ul>
+				<ul class="apparatus__results"></ul>
 			</aside>
 			<form class="research__fields__form ustensils">
-				<input class="research__fields__form__input ustensils__input" placeholder="Ustensiles" type="text" />
-				<button class="research__fields__form__submit ustensils__button" type="submit">
-					<i class="far fa-chevron-down"></i>
+				<input
+					class="research__fields__form__input ustensils__input"
+					placeholder="Ustensiles"
+					type="text"
+				/>
+				<button class="research__fields__form__submit ustensils__button" type="button">
+					<i class="far fa-chevron-down ustensils__chevron"></i>
 				</button>
 			</form>
 			<aside class="research__fields__form__results">
-				<ul>
-				</ul>
+				<ul class="ustensils__results"></ul>
 			</aside>
 		</section>
 		<main class="results"></main>
 		<script src="./scripts/main.js" async defer></script>
-  <script src="./scripts/constructors/RecipeCard.js" async defer></script>
-  <script src="./scripts/utils/dom.js" async defer></script>
+		<script src="./scripts/constructors/RecipeCard.js" async defer></script>
+		<script src="./scripts/utils/dom.js" async defer></script>
 	</body>
 </html>
