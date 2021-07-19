@@ -1,6 +1,4 @@
 .recipe__card {
-	position: initial;
-	height: 400px;
 	&__placeholder {
 		background-color: $secondaryGrey;
 		border-radius: 5px 5px 0 0;
@@ -8,7 +6,7 @@
 	}
 
 	&__section {
-		padding: 0.5rem 1rem 5rem 1rem;
+		padding: 0.5rem 1rem 2rem 1rem;
 		background-color: $primaryGrey;
 		border-radius: 0 0 5px 5px;
 	}
@@ -16,31 +14,33 @@
 	&__header {
 		display: flex;
 		justify-content: space-between;
-		font-size: 12px;
+		font-size: 10px;
+		margin: 0;
 		&__time {
 			flex-direction: row-reverse;
 		}
 	}
 
 	&__aside {
-		@include makeAGrid(repeat(2, 1fr), 1fr, .5rem);
+		@include makeAGrid(repeat(2, 1fr), 1fr, 0.5rem);
 		height: 110px;
-		font-size: 14px;
+		font-size: 12px;
 	}
 
 	&__list {
 		align-self: start;
+		font-size: 12px;
 		justify-self: start;
-  font-size: 14px;
 	}
 
 	&__description {
 		align-self: start;
+		height: 118px;
 		justify-self: start;
 		margin: 0;
 		overflow: hidden;
 		text-overflow: ellipsis;
-		white-space: normal;
-  height: inherit;
+		white-space: wrap;
+		width: 100%;
 	}
 }
