@@ -15,7 +15,7 @@ const getData = async () =>
 
 const createRecipesCard = (recipes) => {
  recipes.forEach(recipe => {
-  recipesSection.innerHTML += new RecipeCard(recipe).recipeCard
+  recipesSection.append(new RecipeCard(recipe).recipeCard)
  });
 }
 
