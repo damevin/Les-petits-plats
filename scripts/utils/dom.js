@@ -1,4 +1,10 @@
 
+/**
+ * Fonction pour créer des éléments
+ * @param {HTMLElement} tag - Un element HTML
+ * @param  {...any} childs - N'importe quel noeud
+ * @returns {HTMLElement}
+ */
 const createDom = (tag, ...childs) => {
  const element = document.createElement(tag)
  childs.forEach(child => {
