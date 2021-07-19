@@ -6,7 +6,7 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;800&display=swap");
 html {
   line-height: 1.15;
   /* 1 */
@@ -21,6 +21,18 @@ html {
  */
 body {
   margin: 0;
+}
+
+/**
+* Remove list style dotted 
+*/
+ul {
+  list-style-type: none;
+  /* Remove bullets */
+  padding: 0;
+  /* Remove padding */
+  margin: 0;
+  /* Remove margins */
 }
 
 /**
@@ -497,6 +509,15 @@ body {
   color: white;
 }
 
+.results {
+  align-items: center;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  justify-content: center;
+}
+
 @media screen and (min-width: 992px) {
   body {
     margin: auto;
@@ -540,7 +561,53 @@ body {
   }
 }
 
+.recipe__card {
+  position: initial;
+  height: 400px;
+}
+
+.recipe__card__placeholder {
+  background-color: #C7BEBE;
+  border-radius: 5px 5px 0 0;
+  height: 150px;
+}
+
+.recipe__card__section {
+  padding: 0.5rem 1rem 2rem 1rem;
+  background-color: #E7E7E7;
+  border-radius: 0 0 5px 5px;
+}
+
 .recipe__card__header {
   display: flex;
   justify-content: space-between;
+  font-size: 12px;
+}
+
+.recipe__card__header__time {
+  flex-direction: row-reverse;
+}
+
+.recipe__card__aside {
+  align-items: center;
+  display: grid;
+  gap: 0;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  justify-content: center;
+  height: 100px;
+  font-size: 14px;
+}
+
+.recipe__card__list {
+  align-self: start;
+  justify-self: start;
+}
+
+.recipe__card__description {
+  position: inherit;
+  margin: 0;
+  align-self: start;
+  justify-self: start;
+  text-overflow: ellipsis;
 }
