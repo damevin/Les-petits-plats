@@ -521,7 +521,7 @@ body {
 @media screen and (min-width: 992px) {
   body {
     margin: auto;
-    max-width: 1080px;
+    max-width: 1200px;
   }
   .body {
     align-items: center;
@@ -559,6 +559,14 @@ body {
     grid-column: 3;
     grid-row: 1;
   }
+  .results {
+    align-items: center;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    justify-content: center;
+  }
 }
 
 .recipe__card {
@@ -573,7 +581,7 @@ body {
 }
 
 .recipe__card__section {
-  padding: 0.5rem 1rem 2rem 1rem;
+  padding: 0.5rem 1rem 5rem 1rem;
   background-color: #E7E7E7;
   border-radius: 0 0 5px 5px;
 }
@@ -591,23 +599,26 @@ body {
 .recipe__card__aside {
   align-items: center;
   display: grid;
-  gap: 0;
+  gap: 0.5rem;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
   justify-content: center;
-  height: 100px;
+  height: 110px;
   font-size: 14px;
 }
 
 .recipe__card__list {
   align-self: start;
   justify-self: start;
+  font-size: 14px;
 }
 
 .recipe__card__description {
-  position: inherit;
-  margin: 0;
   align-self: start;
   justify-self: start;
+  margin: 0;
+  overflow: hidden;
   text-overflow: ellipsis;
+  white-space: normal;
+  height: inherit;
 }
