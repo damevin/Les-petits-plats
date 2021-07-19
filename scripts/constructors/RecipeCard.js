@@ -10,12 +10,6 @@ class RecipeCard {
 		this._appliance = data.appliance;
 	}
 
-	get formatIngredients() {
-		this._ingredients.forEach((ingredient) => {
-			console.log(ingredient.name);
-		});
-	}
-
 	/**
 	 * Create recipe card with create dom function
 	 * @returns HTMLElement - Recipe card
@@ -34,12 +28,13 @@ class RecipeCard {
 					createDom("h2", `${this._name}`, { class: "recipe__card__header__title" }),
 					createDom(
 						"h2",
-						`${this._time}min `,
+						`${this._time}min `, {class: "recipe__card__header__time"},
 						createDom("i", { class: "fal fa-clock recipe__card__header__icon" })
 					)
 				),
 				createDom(
 					"aside",
+					{ class: "recipe__card__aside" },
 					createDom(
 						"ul",
 						{ class: "recipe__card__list" },
@@ -49,11 +44,11 @@ class RecipeCard {
 							// return pour renvoyer une valeur sinon .map() renvoie un tableau de undefined
 							return createDom(
 								"li",
-								`${ingredient.ingredient} `,
-								ingredient.quantity ? `${ingredient.quantity} ` : "",
+								createDom("strong", `${ingredient.ingredient} `),
+								ingredient.quantity ? `: ${ingredient.quantity} ` : "",
 								ingredient.unit ? `${ingredient.unit} ` : "",
 								{
-									class: "recipe__card__list",
+									class: "recipe__card__list__item",
 								}
 							);
 						})
@@ -63,21 +58,5 @@ class RecipeCard {
 			)
 		);
 		return card;
-		/* return `
-  <article>
-   <img>
-   <section>
-    <header>${this._name} <strong><i class="fal fa-clock"></i> ${this._time}min</strong></header>
-     <aside>
-      <ul>${this._ingredients.map(ingredient => `<li>${ingredient.ingredient} ${ingredient.quantity}</li>`)}
-      </ul>
-      <p>${this._description}</p>
-     </aside>
-   </section>
-  </article>
-
-  createDom('li', `${this._ingredients.map(ingredient => `${ingredient.ingredient} ${ingredient.quantity}`)}`))
-  
-  `; */
 	}
 }
