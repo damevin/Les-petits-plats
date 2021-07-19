@@ -21,13 +21,3 @@ const createDom = (tag, ...childs) => {
  })
  return element
 }
-
-/* const body = document.querySelector('.body');
-const fragment = createDom('h1',
-  'salut',
-  createDom("button", "clic", {style: "background: lightblue"}),
-  {"class" : "tesmorts"}
-)
-fragment.classList.add("azoozoz")
-body.appendChild(fragment);
- */
