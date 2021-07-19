@@ -539,3 +539,8 @@ body {
     grid-row: 1;
   }
 }
+
+.recipe__card__header {
+  display: flex;
+  justify-content: space-between;
+}
