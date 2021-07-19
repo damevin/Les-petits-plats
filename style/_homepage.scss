@@ -105,4 +105,8 @@ body {
 			grid-row: 1;
 		}
 	}
+
+	.results {
+		@include makeAGrid(repeat(3, 1fr), 1fr, 1rem)
+	}
 }
