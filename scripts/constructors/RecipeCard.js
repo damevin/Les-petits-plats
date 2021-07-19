@@ -24,29 +24,44 @@ class RecipeCard {
 		const card = createDom(
 			"article",
 			{ class: "recipe__card" },
+			createDom("div", { class: "recipe__card__placeholder" }),
 			createDom(
 				"section",
 				{ class: "recipe__card__section" },
 				createDom(
 					"header",
-					`${this._name}`,
 					{ class: "recipe__card__header" },
+					createDom("h2", `${this._name}`, { class: "recipe__card__header__title" }),
 					createDom(
-						"aside",
-						createDom(
-							"ul",
-               // ... pour transformer les éléments du tableau en paramètres pour createDom
-              //     .map() pour renvoyer un tableau car .forEach() renvoie undefined
-							...this._ingredients.map((ingredient) => {
-                // return pour renvoyer une valeur sinon .map() renvoie un tableau de undefined
-								return createDom("li", `${ingredient.ingredient} ${ingredient.quantity}`);
-							})
-						), createDom('p', `${this._description}`)
+						"h2",
+						`${this._time}min `,
+						createDom("i", { class: "fal fa-clock recipe__card__header__icon" })
 					)
+				),
+				createDom(
+					"aside",
+					createDom(
+						"ul",
+						{ class: "recipe__card__list" },
+						// ... pour transformer les éléments du tableau en paramètres pour createDom
+						//     .map() pour renvoyer un tableau car .forEach() renvoie undefined
+						...this._ingredients.map((ingredient) => {
+							// return pour renvoyer une valeur sinon .map() renvoie un tableau de undefined
+							return createDom(
+								"li",
+								`${ingredient.ingredient} `,
+								ingredient.quantity ? `${ingredient.quantity} ` : "",
+								ingredient.unit ? `${ingredient.unit} ` : "",
+								{
+									class: "recipe__card__list",
+								}
+							);
+						})
+					),
+					createDom("p", `${this._description}`, { class: "recipe__card__description" })
 				)
 			)
 		);
-
 		return card;
 		/* return `
   <article>
