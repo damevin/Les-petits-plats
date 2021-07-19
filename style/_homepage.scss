@@ -7,7 +7,7 @@ body {
 }
 
 .body {
-	@include makeAGrid(100%, 0.5fr 0.3fr repeat(3, 0.1fr), 0.5rem);
+	@include makeAGrid(100%, 1fr, 0.5rem);
 }
 
 *:focus {
@@ -17,6 +17,7 @@ body {
 .header {
 	display: flex;
 	justify-content: center;
+	margin:1rem;
 }
 
 .research {
@@ -30,6 +31,11 @@ body {
 		&__submit {
 			@include button(research);
 		}
+	}
+
+	&__fields {
+	 display: grid;
+		gap: .3rem;
 	}
 
 	&__fields__form {
@@ -65,7 +71,14 @@ body {
 }
 
 .results {
-	@include makeAGrid(repeat(2, 1fr), 1fr, 1rem)
+	@include makeAGrid(1fr, 1fr, 1rem);
+	margin-bottom: 1rem;
+}
+
+@media screen and (min-width: $mediumdevices) {
+	.results {
+		@include makeAGrid(repeat(2, 1fr), 1fr, 1rem)
+	}
 }
 
 @media screen and (min-width: $largedevices) {
