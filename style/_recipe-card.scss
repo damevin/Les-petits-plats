@@ -1,6 +1,43 @@
 .recipe__card {
- &__header {
-  display: flex;
-  justify-content: space-between;
- }
+	position: initial;
+	height: 400px;
+	&__placeholder {
+		background-color: $secondaryGrey;
+		border-radius: 5px 5px 0 0;
+		height: 150px;
+	}
+
+	&__section {
+		padding: 0.5rem 1rem 2rem 1rem;
+		background-color: $primaryGrey;
+		border-radius: 0 0 5px 5px;
+	}
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		font-size: 12px;
+		&__time {
+			flex-direction: row-reverse;
+		}
+	}
+
+	&__aside {
+		@include makeAGrid(repeat(2, 1fr), 1fr, 0);
+		height: 100px;
+		font-size: 14px;
+	}
+
+	&__list {
+		align-self: start;
+		justify-self: start;
+	}
+
+	&__description {
+		position: inherit;
+		margin: 0;
+		align-self: start;
+		justify-self: start;
+		text-overflow: ellipsis;
+	}
 }
