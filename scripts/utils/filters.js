@@ -1,7 +1,6 @@
-
 /**
- * 
- * @param {Array | Objects} recipes 
+ *
+ * @param {Array | Objects} recipes
  */
 const listenOnInputs = (recipes) => {
 	const { ingredients, ustensils, apparatus } = generateFilters(recipes);
@@ -28,12 +27,15 @@ const listenOnInputs = (recipes) => {
 	ingredientToggle.addEventListener("click", () => {
 		if (ingredientChevron.classList.contains("fa-chevron-down")) {
 			ingredientChevron.classList.replace("fa-chevron-down", "fa-chevron-up");
+			apparatusChevron.classList.replace("fa-chevron-down", "fa-chevron-up");
+			ustensilsChevron.classList.replace("fa-chevron-down", "fa-chevron-up");
 			ustensilsWrapper.innerHTML = "";
 			apparatusWrapper.innerHTML = "";
 			ingredients.forEach((ingredient) => {
 				ingredientWrapper.innerHTML += `<li>${ingredient}</li>`;
 			});
 		} else {
+			
 			ingredientChevron.classList.replace("fa-chevron-up", "fa-chevron-down");
 			ingredientWrapper.innerHTML = "";
 		}
