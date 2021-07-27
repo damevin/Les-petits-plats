@@ -21,6 +21,19 @@ const listenOnInputs = (recipes) => {
 		}
 	});
 
+	ustensilsInput.addEventListener("keyup", (e) => {
+		ustensilsWrapper.innerHTML = "";
+		if (e.target.value.length > 3) {
+			const query = e.target.value.toLowerCase();
+			const results = ustensils.filter((ustensil) => {
+				return ustensil.toLowerCase().includes(query);
+			});
+			results.forEach((result) => {
+				ustensilsWrapper.innerHTML += `<li>${result}</li>`;
+			});
+		}
+	});
+
 	/**
 	 * Affichage des ingredients au clique sur le toggle
 	 */
@@ -35,9 +48,21 @@ const listenOnInputs = (recipes) => {
 				ingredientWrapper.innerHTML += `<li>${ingredient}</li>`;
 			});
 		} else {
-			
 			ingredientChevron.classList.replace("fa-chevron-up", "fa-chevron-down");
 			ingredientWrapper.innerHTML = "";
+		}
+	});
+
+	ingredientInput.addEventListener("keyup", (e) => {
+		ingredientWrapper.innerHTML = "";
+		if (e.target.value.length > 3) {
+			const query = e.target.value.toLowerCase();
+			const results = ingredients.filter((ingredient) => {
+				return ingredient.toLowerCase().includes(query);
+			});
+			results.forEach((result) => {
+				ingredientWrapper.innerHTML += `<li>${result}</li>`;
+			});
 		}
 	});
 
@@ -56,5 +81,28 @@ const listenOnInputs = (recipes) => {
 			apparatusChevron.classList.replace("fa-chevron-up", "fa-chevron-down");
 			apparatusWrapper.innerHTML = "";
 		}
+	});
+
+	apparatusInput.addEventListener("keyup", (e) => {
+		apparatusWrapper.innerHTML = "";
+		if (e.target.value.length > 3) {
+			const query = e.target.value.toLowerCase();
+			const results = apparatus.filter((item) => {
+				return item.toLowerCase().includes(query);
+			});
+			results.forEach((result) => {
+				apparatusWrapper.innerHTML += `<li class="ingredient__item">${result}</li>`;
+				const ingredientItem = document.querySelector(".ingredient__item");
+				ingredientItem.addEventListener("click", () => {
+					selectedFilters.push(ingredientItem.textContent);
+					updateFiltersBar(selectedFilters)
+					/* console.log(selectedFilters.indexOf(ingredientItem.textContent));
+					console.log("===================");
+					console.log(selectedFilters);
+					console.log("==================="); */
+				});
+			});
+		}
+	return selectedFilters
 	});
 };
