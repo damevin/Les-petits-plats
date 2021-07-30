@@ -4,19 +4,26 @@
  */
 const listenOnInputs = (recipes) => {
 	const { ingredients, ustensils, apparatus } = generateFilters(recipes);
+
 	/**
 	 * Affichage des ustensils au clique sur le toggle
 	 */
-	ustensilsToggle.addEventListener("click", () => {
-		if (ustensilsChevron.classList.contains("fa-chevron-down")) {
-			ustensilsChevron.classList.replace("fa-chevron-down", "fa-chevron-up");
-			ingredientWrapper.innerHTML = "";
+	ustensilsForm.addEventListener("click", () => {
+		if (ustensilsWrapper.classList.contains("ustensils__results__undisplayed")) {
+			apparatusChevron.classList.replace("fa-chevron-up", "fa-chevron-down");
+			apparatusWrapper.classList.replace("apparatus__results__displayed", "apparatus__results__undisplayed")
 			apparatusWrapper.innerHTML = "";
+			ingredientChevron.classList.replace("fa-chevron-up", "fa-chevron-down");
+			ingredientWrapper.classList.replace("ingredient__results__displayed", "ingredient__results__undisplayed")
+			ingredientWrapper.innerHTML = "";
+			ustensilsChevron.classList.replace("fa-chevron-down", "fa-chevron-up");
+			ustensilsWrapper.classList.replace("ustensils__results__undisplayed","ustensils__results__displayed")
 			ustensils.forEach((ustensil) => {
 				return ustensilsWrapper.append(createDom("li", `${ustensil}`, { class: "ustensil__item" }));
 			});
 		} else {
 			ustensilsChevron.classList.replace("fa-chevron-up", "fa-chevron-down");
+			ustensilsWrapper.classList.replace("ustensils__results__displayed","ustensils__results__undisplayed")
 			ustensilsWrapper.innerHTML = "";
 		}
 		listenOnUstensilsInput();
@@ -50,12 +57,14 @@ const listenOnInputs = (recipes) => {
 	/**
 	 * Affichage des ingredients au clique sur le toggle
 	 */
-	ingredientToggle.addEventListener("click", () => {
-		if (ingredientChevron.classList.contains("fa-chevron-down")) {
+	ingredientForm.addEventListener("click", () => {
+		if (ingredientWrapper.classList.contains("ingredient__results__undisplayed")) {
 			ingredientChevron.classList.replace("fa-chevron-down", "fa-chevron-up");
-			apparatusChevron.classList.replace("fa-chevron-down", "fa-chevron-up");
-			ustensilsChevron.classList.replace("fa-chevron-down", "fa-chevron-up");
-			ustensilsWrapper.innerHTML = "";
+			ingredientWrapper.classList.replace("ingredient__results__undisplayed","ingredient__results__displayed")
+			apparatusChevron.classList.replace("fa-chevron-up", "fa-chevron-down");
+			ustensilsChevron.classList.replace("fa-chevron-up", "fa-chevron-down");
+			ustensilsWrapper.classList.replace("ustensils__results__displayed", "ustensils__results__undisplayed")
+			apparatusWrapper.classList.replace("apparatus__results__displayed", "apparatus__results__undisplayed")
 			apparatusWrapper.innerHTML = "";
 			ingredients.forEach((ingredient) => {
 				return ingredientWrapper.append(
@@ -64,6 +73,7 @@ const listenOnInputs = (recipes) => {
 			});
 		} else {
 			ingredientChevron.classList.replace("fa-chevron-up", "fa-chevron-down");
+			ingredientWrapper.classList.replace("ingredient__results__displayed", "ingredient__results__undisplayed")
 			ingredientWrapper.innerHTML = "";
 		}
 		listenOnIngredientsItems();
@@ -71,7 +81,7 @@ const listenOnInputs = (recipes) => {
 
 	ingredientInput.addEventListener("keyup", (e) => {
 		ingredientWrapper.innerHTML = "";
-		if (e.target.value.length > 3) {
+		if (e.target.value.length >= 3) {
 			const query = e.target.value.toLowerCase();
 			const results = ingredients.filter((ingredient) => {
 				return ingredient.toLowerCase().includes(query);
@@ -97,9 +107,14 @@ const listenOnInputs = (recipes) => {
 	/**
 	 * Affichage des appareils au clique sur le toggle
 	 */
-	apparatusToggle.addEventListener("click", () => {
-		if (apparatusChevron.classList.contains("fa-chevron-down")) {
+	apparatusForm.addEventListener("click", () => {
+		if (apparatusWrapper.classList.contains("apparatus__results__undisplayed")) {
 			apparatusChevron.classList.replace("fa-chevron-down", "fa-chevron-up");
+			ingredientChevron.classList.replace("fa-chevron-up", "fa-chevron-down");
+			ustensilsChevron.classList.replace("fa-chevron-up", "fa-chevron-down");
+			apparatusWrapper.classList.replace("apparatus__results__undisplayed", "apparatus__results__displayed")
+			ingredientWrapper.classList.replace("ingredient__results__displayed", "ingredient__results__undisplayed")
+			ustensilsWrapper.classList.replace("ustensils__results__displayed", "ustensils__results__undisplayed")
 			apparatus.forEach((apparatus) => {
 				apparatusWrapper.innerHTML += `<li class="apparatus__item">${apparatus}</li>`;
 				ustensilsWrapper.innerHTML = "";
@@ -107,6 +122,7 @@ const listenOnInputs = (recipes) => {
 			});
 		} else {
 			apparatusChevron.classList.replace("fa-chevron-up", "fa-chevron-down");
+			apparatusWrapper.classList.replace("apparatus__results__displayed", "apparatus__results__undisplayed")
 			apparatusWrapper.innerHTML = "";
 		}
 		listenOnApparatusItems();
