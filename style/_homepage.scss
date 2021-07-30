@@ -36,6 +36,7 @@ body {
 
 	&__fields {
 		display: grid;
+		gap: 0.5rem;
 	}
 
 	&__fields__form {
@@ -110,9 +111,10 @@ body {
 		border-radius: 0 5px 5px 5px;
 		margin: 0;
 	}
-	&__item {
-		cursor: pointer;
-	}
+}
+
+.ustensil__item {
+	cursor: pointer
 }
 
 .results {
@@ -120,12 +122,22 @@ body {
 	margin-bottom: 1rem;
 }
 
+.no__results {
+	background-color: #F5FDB0;
+	border-radius: 5px;
+	font-size: 1.5rem;
+	grid-column: span 3;
+	padding: 3rem 0rem;
+	text-align: center;
+}
+/* Medium devices */
 @media screen and (min-width: $mediumdevices) {
 	.results {
 		@include makeAGrid(repeat(2, 1fr), 1fr, 1rem);
 	}
 }
 
+/* Large devices */
 @media screen and (min-width: $largedevices) {
 	body {
 		margin: auto;
@@ -182,7 +194,9 @@ body {
 		text-align: left;
 	}
 
-	.ingredient, .apparatus, .ustensils {
+	.ingredient,
+	.apparatus,
+	.ustensils {
 		&__results__undisplayed {
 			display: none;
 		}
