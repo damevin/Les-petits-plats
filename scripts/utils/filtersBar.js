@@ -1,8 +1,8 @@
 /**
-	* 
-	* @param {*} selectedFiltersUnduplicated 
-	* @param {*} recipes 
-	*/
+ *
+ * @param {*} selectedFiltersUnduplicated
+ * @param {*} recipes
+ */
 const updateFiltersBar = (selectedFiltersUnduplicated, recipes) => {
 	filtersBar.innerHTML = "";
 
@@ -19,20 +19,29 @@ const updateFiltersBar = (selectedFiltersUnduplicated, recipes) => {
 
 	const filterQuery = document.querySelectorAll(".filter__query");
 	const filters = Array.from(filterQuery);
-
 	const result = recipes.filter((recipe) => {
 		return filters.every((item) => {
-			return recipe.ingredients.some((i) => {
-				return i.ingredient.toLowerCase().includes(item.textContent.toLowerCase());
-			});
+			const formatedItem = item.textContent.toLowerCase();
+			return (
+				recipe.ingredients.some((i) => {
+					return i.ingredient.toLowerCase().includes(formatedItem);
+				}) ||
+				recipe.appliance.toLowerCase().includes(formatedItem) ||
+				recipe.ustensils.some((ustensil) => {
+					return ustensil.toLowerCase() === formatedItem;
+				})
+			);
 		});
 	});
+
+	recipesSection.innerHTML = "";
+	createRecipesCard(result);
 
 	filterQuery.forEach((filter) => {
 		filter.addEventListener("click", () => {
 			const array = [...filterQuery];
 			const index = array.indexOf(filter);
-			array.splice(index, 1)
+			array.splice(index, 1);
 			console.log("===============");
 			console.log(array);
 			console.log("===============");
