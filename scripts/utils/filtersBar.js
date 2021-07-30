@@ -1,5 +1,5 @@
 /**
- * 
+ *
  * @param {*} selectedFiltersUnduplicated
  * @param {*} recipes
  */
@@ -37,15 +37,23 @@ const updateFiltersBar = (selectedFiltersUnduplicated, recipes) => {
 	recipesSection.innerHTML = "";
 	createRecipesCard(result);
 	if (!result.length) {
-		recipesSection.append(createDom("div", `Aucune recette ne correspond à votre critère… vous pouvez
-		chercher « tarte aux pommes », « poisson », etc.`, {class: "no__results"}))
-	}
+		recipesSection.append(
+			createDom(
+				"div",
+				`Aucune recette ne correspond à votre critère… vous pouvez
+		chercher « tarte aux pommes », « poisson », etc.`,
+				{ class: "no__results" }
+			)
+		);
+	}	
+	listenOnFilterBar(filters)
+};
 
-	
 
-	filterQuery.forEach((filter) => {
+const listenOnFilterBar = (filters) => {
+	filters.forEach((filter) => {
 		filter.addEventListener("click", () => {
-			const array = [...filterQuery];
+			const array = [...filters];
 			const index = array.indexOf(filter);
 			array.splice(index, 1);
 			console.log("===============");
@@ -53,4 +61,4 @@ const updateFiltersBar = (selectedFiltersUnduplicated, recipes) => {
 			console.log("===============");
 		});
 	});
-};
+}
