@@ -378,6 +378,7 @@ body {
 
 .research {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
 }
 
@@ -419,13 +420,18 @@ body {
 
 .research__fields {
   display: grid;
-  gap: 0.3rem;
 }
 
 .research__fields__form {
   display: flex;
   height: 70px;
   width: 100%;
+}
+
+.research__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .ingredient__button {
@@ -455,6 +461,13 @@ body {
 
 .ingredient__input::placeholder {
   color: white;
+}
+
+.ingredient__results {
+  background-color: #3282F7;
+  color: white;
+  padding: 1rem;
+  margin: 0;
 }
 
 .apparatus__button {
@@ -560,7 +573,7 @@ body {
   .research__fields {
     align-items: center;
     display: grid;
-    gap: 0.5rem;
+    gap: 0rem 0.5rem;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: 1fr;
     justify-content: center;
@@ -589,11 +602,25 @@ body {
     grid-column: 3 span 6;
     grid-row: 2;
   }
+  .ingredient__item {
+    padding: 0rem 0rem 0rem 1rem;
+    text-align: left;
+  }
+  .ingredient__results {
+    position: absolute;
+    align-items: center;
+    display: grid;
+    gap: 0.5rem 5rem;
+    grid-template-columns: repeat(3, 2fr);
+    grid-template-rows: 1fr;
+    justify-content: center;
+  }
+  /* Results section (cards recipes section) */
   .results {
     align-items: center;
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 2fr);
     grid-template-rows: 1fr;
     justify-content: center;
   }
@@ -648,4 +675,20 @@ body {
   text-overflow: ellipsis;
   white-space: wrap;
   width: 100%;
+}
+
+.filter__query {
+  align-items: center;
+  background-color: #3282F7;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  margin: .5rem 0rem .5rem 0rem;
+  padding: 0.5rem 0.3rem;
+}
+
+.filter__query__icon {
+  padding: .3rem .3rem;
 }
