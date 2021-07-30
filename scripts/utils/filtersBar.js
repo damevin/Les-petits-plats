@@ -1,3 +1,8 @@
+/**
+	* 
+	* @param {*} selectedFiltersUnduplicated 
+	* @param {*} recipes 
+	*/
 const updateFiltersBar = (selectedFiltersUnduplicated, recipes) => {
 	filtersBar.innerHTML = "";
 
