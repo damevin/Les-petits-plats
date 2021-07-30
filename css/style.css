@@ -463,11 +463,20 @@ body {
   color: white;
 }
 
-.ingredient__results {
+.ingredient__results__undisplayed {
+  display: none;
+}
+
+.ingredient__results__displayed {
   background-color: #3282F7;
   color: white;
   padding: 1rem;
+  border-radius: 0 5px 5px 5px;
   margin: 0;
+}
+
+.ingredient__item {
+  cursor: pointer;
 }
 
 .apparatus__button {
@@ -499,6 +508,22 @@ body {
   color: white;
 }
 
+.apparatus__results__undisplayed {
+  display: none;
+}
+
+.apparatus__results__displayed {
+  background-color: #68D9A4;
+  color: white;
+  padding: 1rem;
+  border-radius: 0 5px 5px 5px;
+  margin: 0;
+}
+
+.apparatus__item {
+  cursor: pointer;
+}
+
 .ustensils__button {
   border: none;
   margin: 0;
@@ -526,6 +551,22 @@ body {
 
 .ustensils__input::placeholder {
   color: white;
+}
+
+.ustensils__results__undisplayed {
+  display: none;
+}
+
+.ustensils__results__displayed {
+  background-color: #ED6454;
+  color: white;
+  padding: 1rem;
+  border-radius: 0 5px 5px 5px;
+  margin: 0;
+}
+
+.ustensils__item {
+  cursor: pointer;
 }
 
 .results {
@@ -606,7 +647,10 @@ body {
     padding: 0rem 0rem 0rem 1rem;
     text-align: left;
   }
-  .ingredient__results {
+  .ingredient__results__undisplayed, .apparatus__results__undisplayed, .ustensils__results__undisplayed {
+    display: none;
+  }
+  .ingredient__results__displayed, .apparatus__results__displayed, .ustensils__results__displayed {
     position: absolute;
     align-items: center;
     display: grid;
