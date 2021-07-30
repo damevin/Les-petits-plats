@@ -9,8 +9,8 @@ const generateFilters = (recipes) => {
 	let ustensils = [];
 	recipes.forEach((recipe) => {
 		ingredients = [
-			...new Set([...ingredients, ...recipe.ingredients.map((i) => i.ingredient.toLowerCase())])].sort();
-		ustensils = [...new Set([...ustensils, ...recipe.ustensils.map((u) => u.toLowerCase())])].sort();
+			...new Set([...ingredients, ...recipe.ingredients.map((i) => i.ingredient)])].sort();
+		ustensils = [...new Set([...ustensils, ...recipe.ustensils.map((u) => u)])].sort();
 		apparatus = [...new Set([...apparatus, ...[recipe.appliance]])].sort();
 	});
 	return { ingredients, ustensils, apparatus };
