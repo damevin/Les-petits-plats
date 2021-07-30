@@ -56,11 +56,18 @@ body {
 	&__input {
 		@include input(ingredient);
 	}
-	&__results {
+	&__results__undisplayed {
+		display: none;
+	}
+	&__results__displayed {
 		background-color: $blue;
 		color: white;
 		padding: 1rem;
+		border-radius: 0 5px 5px 5px;
 		margin: 0;
+	}
+	&__item {
+		cursor: pointer;
 	}
 }
 
@@ -71,6 +78,19 @@ body {
 	&__input {
 		@include input(apparatus);
 	}
+	&__results__undisplayed {
+		display: none;
+	}
+	&__results__displayed {
+		background-color: $green;
+		color: white;
+		padding: 1rem;
+		border-radius: 0 5px 5px 5px;
+		margin: 0;
+	}
+	&__item {
+		cursor: pointer;
+	}
 }
 
 .ustensils {
@@ -79,6 +99,19 @@ body {
 	}
 	&__input {
 		@include input(ustensils);
+	}
+	&__results__undisplayed {
+		display: none;
+	}
+	&__results__displayed {
+		background-color: $red;
+		color: white;
+		padding: 1rem;
+		border-radius: 0 5px 5px 5px;
+		margin: 0;
+	}
+	&__item {
+		cursor: pointer;
 	}
 }
 
@@ -149,9 +182,14 @@ body {
 		text-align: left;
 	}
 
-	.ingredient__results {
-		position: absolute;
-		@include makeAGrid(repeat(3, 2fr), 1fr, 0.5rem 5rem);
+	.ingredient, .apparatus, .ustensils {
+		&__results__undisplayed {
+			display: none;
+		}
+		&__results__displayed {
+			position: absolute;
+			@include makeAGrid(repeat(3, 2fr), 1fr, 0.5rem 5rem);
+		}
 	}
 
 	/* Results section (cards recipes section) */
