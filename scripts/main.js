@@ -1,3 +1,8 @@
+/**
+	* Create globals objects for all categories
+	* @param {Array | Objects} recipes 
+	* @returns {Array}
+	*/
 const generateFilters = (recipes) => {
 	let ingredients = [];
 	let apparatus = [];
@@ -11,6 +16,10 @@ const generateFilters = (recipes) => {
 	return { ingredients, ustensils, apparatus };
 };
 
+/**
+	* Fetch data on local file
+	* @returns {Array | Objects}
+	*/
 const getData = async () =>
 	await fetch("../scripts/data/recipes.json", {
 		mode: "no-cors",
@@ -32,8 +41,7 @@ const createRecipesCard = (recipes) => {
 		recipesSection.append(new RecipeCard(recipe).recipeCard);
 	});
 };
-
-
+/*  */
 const init = async () => {
 	const { recipes } = await getData();
 	generateFilters(recipes);
