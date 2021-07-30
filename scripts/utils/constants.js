@@ -1,6 +1,7 @@
 /**
  * DOM elements
  */
+
 const selectedFilters = []
 
 const filtersBar = document.querySelector('.research__filters')
