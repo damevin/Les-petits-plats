@@ -3,9 +3,8 @@
  * @param {*} selectedFiltersUnduplicated
  * @param {*} recipes
  */
-const updateFiltersBar = (selectedFiltersUnduplicated, recipes) => {
+const createFiltersBar = (selectedFiltersUnduplicated, recipes) => {
 	filtersBar.innerHTML = "";
-
 	selectedFiltersUnduplicated.forEach((filter) => {
 		return filtersBar.append(
 			createDom(
@@ -16,7 +15,10 @@ const updateFiltersBar = (selectedFiltersUnduplicated, recipes) => {
 			)
 		);
 	});
+	researchOnFilters(recipes);
+};
 
+const researchOnFilters = (recipes) => {
 	const filterQuery = document.querySelectorAll(".filter__query");
 	const filters = Array.from(filterQuery);
 	const result = recipes.filter((recipe) => {
@@ -33,10 +35,12 @@ const updateFiltersBar = (selectedFiltersUnduplicated, recipes) => {
 			);
 		});
 	});
-
-	recipesSection.innerHTML = "";
-	createRecipesCard(result);
-	if (!result.length) {
+	if (result.length) {
+		recipesSection.innerHTML = "";
+		createRecipesCard(result);
+		listenOnFilterBar(filters);
+	} else if (!result.length) {
+		recipesSection.innerHTML = "";
 		recipesSection.append(
 			createDom(
 				"div",
@@ -45,20 +49,18 @@ const updateFiltersBar = (selectedFiltersUnduplicated, recipes) => {
 				{ class: "no__results" }
 			)
 		);
-	}	
-	listenOnFilterBar(filters)
+	} 
 };
 
+const updateFilterQuery = () => {};
 
 const listenOnFilterBar = (filters) => {
 	filters.forEach((filter) => {
+		console.log(filter.textContent);
 		filter.addEventListener("click", () => {
 			const array = [...filters];
 			const index = array.indexOf(filter);
 			array.splice(index, 1);
-			console.log("===============");
-			console.log(array);
-			console.log("===============");
 		});
 	});
-}
+};
