@@ -58,12 +58,15 @@ const listenOnFilterBar = (filters, recipes) => {
 		filter.addEventListener("click", () => {
 			const index = filters.indexOf(filter);
 			filters.splice(index, 1);
+			console.log("=========");
+			console.log(filters);
+			console.log("=========");
 			filter.remove();
 			if (!filters.length) {
 				recipesSection.innerHTML = "";
-				createRecipesCard(recipes)
+				createRecipesCard(recipes);
 			} else {
-				researchOnFilters(recipes)
+				researchOnFilters(recipes);
 			}
 		});
 	});
