@@ -39,7 +39,8 @@ run liveserver
 
 ### Releases
 
-#### TO DO
+#### v1.0.0 (Août 2021)
+- Release
 
 ## Code
 
