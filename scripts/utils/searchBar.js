@@ -5,7 +5,7 @@
  */
 const filteredRecipes = (recipes, searchBar) => {
 	searchBar.addEventListener("keyup", (e) => {
-		if (e.target.value.length > 3) {
+		if (e.target.value.length >= 3) {
 			recipesSection.innerHTML = "";
 			const query = e.target.value.toLowerCase();
 			const results = recipes.filter((recipe) => {
