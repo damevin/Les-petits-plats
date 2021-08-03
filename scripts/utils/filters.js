@@ -49,7 +49,7 @@ const listenOnInputs = (recipes) => {
 			item.addEventListener("click", () => {
 				selectedFilters.push(item.textContent);
 				const selectedFiltersUnduplicated = [...new Set(selectedFilters)];
-				updateFiltersBar(selectedFiltersUnduplicated, recipes);
+				createFiltersBar(selectedFiltersUnduplicated, recipes);
 			});
 		});
 	};
@@ -99,7 +99,7 @@ const listenOnInputs = (recipes) => {
 			item.addEventListener("click", () => {
 				selectedFilters.push(item.textContent);
 				const selectedFiltersUnduplicated = [...new Set(selectedFilters)];
-				updateFiltersBar(selectedFiltersUnduplicated, recipes);
+				createFiltersBar(selectedFiltersUnduplicated, recipes);
 			});
 		});
 	};
@@ -148,7 +148,7 @@ const listenOnInputs = (recipes) => {
 			item.addEventListener("click", () => {
 				selectedFilters.push(item.textContent);
 				const selectedFiltersUnduplicated = [...new Set(selectedFilters)];
-				updateFiltersBar(selectedFiltersUnduplicated, recipes);
+				createFiltersBar(selectedFiltersUnduplicated, recipes);
 			});
 		});
 	};
