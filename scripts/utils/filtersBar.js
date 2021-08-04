@@ -15,10 +15,10 @@ const createFiltersBar = (selectedFiltersUnduplicated, recipes) => {
 			)
 		);
 	});
-	researchOnFilters(recipes);
+	researchOnFilters(recipes, selectedFiltersUnduplicated);
 };
 
-const researchOnFilters = (recipes) => {
+const researchOnFilters = (recipes, selectedFiltersUnduplicated) => {
 	const filterQuery = document.querySelectorAll(".filter__query");
 	const filters = Array.from(filterQuery);
 	const result = recipes.filter((recipe) => {
@@ -56,18 +56,20 @@ const researchOnFilters = (recipes) => {
 const listenOnFilterBar = (filters, recipes) => {
 	filters.forEach((filter) => {
 		filter.addEventListener("click", () => {
-			const index = filters.indexOf(filter);
-			filters.splice(index, 1);
-			console.log("=========");
-			console.log(filters);
-			console.log("=========");
-			filter.remove();
-			if (!filters.length) {
-				recipesSection.innerHTML = "";
-				createRecipesCard(recipes);
-			} else {
-				researchOnFilters(recipes);
-			}
+			removeFilter(filter, filters, recipes);
 		});
 	});
+};
+
+const removeFilter = (selectedFilter, arrayOfFilters, recipes) => {
+	const index = arrayOfFilters.indexOf(selectedFilter);
+	arrayOfFilters.slice(index, 0);
+	selectedFilter.remove();
+	selectedFilters.splice(0, selectedFilters.length)
+	if (!arrayOfFilters.length) {
+		recipesSection.innerHTML = "";
+		createRecipesCard(recipes);
+	} else {
+		researchOnFilters(recipes, arrayOfFilters);
+	}
 };
