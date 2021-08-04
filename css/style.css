@@ -644,15 +644,15 @@ body {
     grid-row: 1;
   }
   .research__fields__form__results__ingredient {
-    grid-column: 1 span 6;
+    grid-column: 1 / span 6;
     grid-row: 2;
   }
   .research__fields__form__results__apparatus {
-    grid-column: 2 span 6;
+    grid-column: 2 / span 6;
     grid-row: 2;
   }
   .research__fields__form__results__ustensils {
-    grid-column: 3 span 6;
+    grid-column: 3 / span 6;
     grid-row: 2;
   }
   .ingredient__item {
