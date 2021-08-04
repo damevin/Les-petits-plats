@@ -24,7 +24,7 @@ Les petits plats est une application de recherche de recettes de cuisine, les ut
 >   - [Screenshots](#screenshots)
 >   - [Releases](#releases)
 >   - [Code](#code)
->     - [Content](#content)
+>     - [Benchmark](#benchmark)
 >     - [Wiki](#)
 >   - [Resources (Documentation and other links)](#resources-documentation-and-other-links)
 >   - [Dépendances utilisées](#dépendances-utilisées)
@@ -52,12 +52,20 @@ run liveserver
 
 ## Code
 
+### Benchmark 
+
+Afin de tester la fonctionnalité de recherche principale, un benchmark as été effectué sur deux algorythmes différents. 
+
+**Lien du benchmark: www**
+
+Pour tester en local il faut se branche sur la branche !2
+
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/8f43cad6-acbe-438c-9482-42916f9f8eed/deploy-status)](https://app.netlify.com/sites/rd-lpp/deploys)
 <img style="border:0;width:88px;height:31px"
             src="https://jigsaw.w3.org/css-validator/images/vcss"
             alt="Valid CSS!" />
 
-### Content
 
 ## Resources (Documentation and other links)
 
