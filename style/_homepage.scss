@@ -175,15 +175,15 @@ body {
 
 		&__form__results {
 			&__ingredient {
-				grid-column: 1 span 6;
+				grid-column: 1 / span 6;
 				grid-row: 2;
 			}
 			&__apparatus {
-				grid-column: 2 span 6;
+				grid-column: 2 / span 6;
 				grid-row: 2;
 			}
 			&__ustensils {
-				grid-column: 3 span 6;
+				grid-column: 3 / span 6;
 				grid-row: 2;
 			}
 		}
