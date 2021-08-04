@@ -456,7 +456,7 @@ body {
   border-radius: 5px 0 0 5px;
 }
 
-.ingredient__input::focus  {
+.ingredient__input:focus  {
   outline: none;
 }
 
@@ -501,7 +501,7 @@ body {
   border-radius: 5px 0 0 5px;
 }
 
-.apparatus__input::focus {
+.apparatus__input:focus {
   outline: none;
 }
 
@@ -546,7 +546,7 @@ body {
   border-radius: 5px 0 0 5px;
 }
 
-.ustensils__input::focus {
+.ustensils__input:focus {
   outline: none;
 }
 
