@@ -5,6 +5,7 @@
 const selectedFilters = [];
 
 const filtersBar = document.querySelector(".research__filters");
+const filterQueries = document.querySelectorAll("filter__query");
 
 const globalSearchBar = document.querySelector(".research__bar__input");
 const recipesSection = document.querySelector(".results");
