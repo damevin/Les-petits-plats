@@ -25,7 +25,6 @@ Les petits plats est une application de recherche de recettes de cuisine, les ut
 >   - [Releases](#releases)
 >   - [Code](#code)
 >     - [Benchmark](#benchmark)
->     - [Wiki](#)
 >   - [Resources (Documentation and other links)](#resources-documentation-and-other-links)
 >   - [Dépendances utilisées](#dépendances-utilisées)
 >   - [Contribuer au projet](#contribuer-au-projet)
@@ -72,6 +71,8 @@ Pour tester en local il faut se branche sur la branche !2
 - [Maquettes de l'application](https://www.figma.com/file/xqeE1ZKlHUWi2Efo8r73NK)
 - [User cases](https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P6+Algorithms/Cas+d%E2%80%99utilisation+%2303+Filtrer+les+recettes+dans+l%E2%80%99interface+utilisateur.pdf)
 - [Data](https://github.com/OpenClassrooms-Student-Center/P11-front-end-search-engine/blob/master/recipes.js)
+- [Fiche d'investigation de fonctionnalité - Les petits plats.pdf](https://github.com/damevin/Les-petits-plats/files/6939993/Fiche.d.investigation.de.fonctionnalite.-.Les.petits.plats.pdf)
+
 
 ### Dépendances utilisées
 
