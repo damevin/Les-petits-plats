@@ -10,7 +10,7 @@ const filteredRecipes = (recipes, searchBar) => {
 			const query = e.target.value.toLowerCase();
 			const results = recipes.filter((recipe) => {
 				return (
-					recipe.name.toLowerCase().startsWith(query) || recipe.description.toLowerCase().includes(query)
+					recipe.name.toLowerCase().startsWith(query) || recipe.description.toLowerCase().includes(query) || recipe.ingredients.some((ingredient) => ingredient.ingredient.toLowerCase().includes(query))
 				);
 			});
 			createRecipesCard(results);
@@ -30,3 +30,4 @@ const filteredRecipes = (recipes, searchBar) => {
 		}
 	});
 };
+
