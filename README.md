@@ -58,7 +58,7 @@ run liveserver
 
 Afin de tester la fonctionnalité de recherche principale, un benchmark as été effectué sur deux algorythmes différents. 
 
-**Lien du benchmark: https://jsben.ch/vdXfJ**
+**Lien du benchmark: https://jsben.ch/AFwq9**
 
 Pour tester en local il faut se branche sur la branche !2
 
